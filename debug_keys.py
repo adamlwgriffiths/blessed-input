@@ -4,7 +4,7 @@ Enable/Disable each section as appropriate.
 Note: This is _not_ a unit test script.
 '''
 from blessed import Terminal
-import keys
+from blessed_input import keys
 
 term = Terminal()
 

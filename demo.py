@@ -1,6 +1,6 @@
 import sys
 from blessed import Terminal, keyboard
-import keys
+from blessed_input import keys
 
 term = Terminal()
 

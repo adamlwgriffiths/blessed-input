@@ -36,6 +36,35 @@ KEY_ESCAPE              = '\x1b'
 Function-keys + Meta are converted properly.
 Ie. you won't get F-24 being pressed, you'll get F1-F12 with the appropriate META key.
 
+## Usage
+
+As a `blessed.inkey` replacement:
+```
+from blessed_input import get_key
+
+...
+
+pressed = keys.get_key(term)
+print(pressed)
+```
+
+This function attempts to detect key sequences, and will receive
+further key events if this is the case using `receive_sequence`.
+It then sends the key press 'string' input to `convert_keys`
+for conversion to a list of key presses.
+
+If you want to convert a key you've received from blessed/ncurses,
+refer to the `get_key` implementation.
+
+For best compatibility, set your application to use `term.raw()` and `term.cbreak()`.
+
+Use the `get_key` method to
+
+
+See demo.py for an example of a "Text Editor-like" application.
+
+See debug_keys.py for an example of receiving key-events and printing out the key combinations.
+
 ## Caveats
 
 The different ncurses modes act differently and have different reserved
