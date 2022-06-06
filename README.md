@@ -8,9 +8,10 @@ Ie, Ctrl, Alt, Shift, Meta, F-key combinations.
 
 *Without blessed-input*
 ```
-# Ctrl + Down
+# Ctrl + Down Arrow
 if key == '\x1b[1;5B':
     move_cursor_y(1)
+# Ctrl + HOME
 if key == '\x1b[1;5H':
     set_cursor_x(0)
 ```
