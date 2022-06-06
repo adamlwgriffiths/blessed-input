@@ -56,6 +56,7 @@ Key sequences are always in the order:
 
 This should make matching patterns easier, as you don't need to look inside the list of each key, you just provide the sequence of keys you want in the above order.
 
+For best compatibility, set your application to use `term.raw()` and `term.cbreak()`.
 
 To get the 'text' version of a key, simply call `key.value` (as they are an enumeration).
 
@@ -73,17 +74,16 @@ Ie. `KEY_ESCAPE              = '\x1b'`
 Function-keys + Meta are converted properly.
 Ie. you won't get F-24 being pressed, you'll get F1-F12 with the appropriate META key.
 
-## Manual conversion
-
-If you want to convert a key you've received from blessed/ncurses,
-refer to the `get_key` implementation.
-
-For best compatibility, set your application to use `term.raw()` and `term.cbreak()`.
-
+## Demos
 
 See demo.py for an example of a "Text Editor-like" application.
 
 See debug_keys.py for an example of receiving key-events and printing out the key combinations.
+
+## Manual conversion
+
+If you want to convert a key you've received from blessed/ncurses,
+refer to the `get_key` implementation.
 
 ## Caveats
 
